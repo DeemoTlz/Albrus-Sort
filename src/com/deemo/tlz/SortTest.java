@@ -14,6 +14,7 @@ public class SortTest {
         Integer[] arr3 = new Integer[MAX_LENGTH];
         Integer[] arr4 = new Integer[MAX_LENGTH];
         Integer[] arr5 = new Integer[MAX_LENGTH];
+        Integer[] arr6 = new Integer[MAX_LENGTH];
         for (int i = 0; i < MAX_LENGTH; i++) {
             int x = (int) (Math.random() * MAX_LENGTH);
             arr1[i] = x;
@@ -21,6 +22,7 @@ public class SortTest {
             arr3[i] = x;
             arr4[i] = x;
             arr5[i] = x;
+            arr6[i] = x;
         }
 
         // BubbleSort<Integer> bubbleSort = new BubbleSort<>(arr1);
@@ -43,10 +45,14 @@ public class SortTest {
         quickSort.sort();
         // insertionSort.print();
 
+        MergeSort<Integer> mergeSort = new MergeSort<>(arr6);
+        mergeSort.sort();
+        // insertionSort.print();
+
         System.out.println(Arrays.equals(arr1, arr2));
         System.out.println(Arrays.equals(arr2, arr3));
         System.out.println(Arrays.equals(arr3, arr4));
         System.out.println(Arrays.equals(arr4, arr5));
-
+        System.out.println(Arrays.equals(arr5, arr6));
     }
 }
