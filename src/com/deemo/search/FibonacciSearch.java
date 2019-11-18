@@ -12,7 +12,7 @@ public class FibonacciSearch {
         // List<int[]> ints = Arrays.asList(arr);
         // System.out.println(ints);
 
-        System.out.println(search(arr, 88));
+        System.out.println(search(arr, 2));
         System.out.println(search(arr, -1));
     }
 
@@ -21,9 +21,9 @@ public class FibonacciSearch {
             throw new RuntimeException();
         }
 
-        if (length == 1) {
+        /*if (length == 1) {
             return new int[] {1};
-        }
+        }*/
 
         List<Integer> list = new ArrayList<>();
         int k = 1;
@@ -55,12 +55,12 @@ public class FibonacciSearch {
         int mid;
         int high = arr.length - 1;
 
-        int[] fibonacciArr = fibonacciArray(arr.length - 1);
+        int[] fibonacciArr = fibonacciArray(arr.length);
         int k = fibonacciArr.length - 1;
 
         System.out.println("Fibonacci arr: " + Arrays.toString(fibonacciArr));
 
-        int[] tempArr = Arrays.copyOf(arr, fibonacciArr[k]);
+        int[] tempArr = Arrays.copyOf(arr, fibonacciArr[k] - 1);
         for (int i = arr.length; i < tempArr.length; i++) {
             tempArr[i] = tempArr[high];
         }
