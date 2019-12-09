@@ -1,6 +1,6 @@
 package com.deemo.inner;
 
-public class AnonymousInner {
+public class AnonymousOuter {
 
 	private int a = 1;
 	public int b = 2;
@@ -63,7 +63,7 @@ public class AnonymousInner {
 				System.out.println("匿名内部类方法参数：" + games);
 				System.out.println("匿名内部类成员变量：" + myGame);
 				System.out.println("匿名内部类成员变量：" + myGta);
-				System.out.println("外部类成员变量：" + AnonymousInner.this.game);
+				System.out.println("外部类成员变量：" + AnonymousOuter.this.game);
 
 				gta.play();
 				gta.setName("给他爱5");
@@ -91,10 +91,10 @@ public class AnonymousInner {
 	}
 
 	public static void main(String[] args) {
-		AnonymousInner anonymousInner = new AnonymousInner();
+		AnonymousOuter AnonymousOuter = new AnonymousOuter();
 
 		GTA gta = new GTA();
-		anonymousInner.print("三男一狗", gta);
+		AnonymousOuter.print("三男一狗", gta);
 		gta.play();
 	}
 

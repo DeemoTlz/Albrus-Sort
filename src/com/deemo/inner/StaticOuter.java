@@ -1,6 +1,6 @@
 package com.deemo.inner;
 
-public class StaticInner {
+public class StaticOuter {
 
 	private int a = 1;
 	public int b = 2;
@@ -15,24 +15,24 @@ public class StaticInner {
 
 		public void print() {
 			System.out.println("a = " + a);
-			// new StaticInner().a;
-			// System.out.println("StaticInner.a = " + StaticInner.a);
-			System.out.println("StaticInner.c = " + StaticInner.c);
+			// new StaticOuter().a;
+			// System.out.println("StaticOuter.a = " + StaticOuter.a);
+			System.out.println("StaticOuter.c = " + StaticOuter.c);
 			System.out.println("b = " + b);
-			System.out.println("StaticInner.d = " + StaticInner.d);
+			System.out.println("StaticOuter.d = " + StaticOuter.d);
 		}
 
 		public static void prints() {
 			System.out.println("c = " + c);
-			System.out.println("StaticInner.c = " + StaticInner.c);
+			System.out.println("StaticOuter.c = " + StaticOuter.c);
 			System.out.println("d = " + d);
-			System.out.println("StaticInner.d = " + StaticInner.d);
+			System.out.println("StaticOuter.d = " + StaticOuter.d);
 		}
 	}
 
 	public void print() {
 		System.out.println("a = " + a);
-		System.out.println("new Inner().a = " + new StaticInner.Inner().a);
+		System.out.println("new Inner().a = " + new StaticOuter.Inner().a);
 		System.out.println("b = " + b);
 		System.out.println("new Inner().b = " + new Inner().b);
 		System.out.println("c = " + c);

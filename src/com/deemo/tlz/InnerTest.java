@@ -1,26 +1,26 @@
 package com.deemo.tlz;
 
-import com.deemo.inner.MemberInner;
-import com.deemo.inner.StaticInner;
+import com.deemo.inner.MemberOuter;
+import com.deemo.inner.StaticOuter;
 
 public class InnerTest {
 
 	public static void main(String[] args) {
-		MemberInner memberInner = new MemberInner();
+		MemberOuter memberInner = new MemberOuter();
 		memberInner.print();
 		System.out.println("=========================");
-		MemberInner.Inner inner = memberInner.new Inner();
+		MemberOuter.Inner inner = memberInner.new Inner();
 		inner.b = 0;
-		MemberInner.Inner inner1 = new MemberInner().new Inner();
+		MemberOuter.Inner inner1 = new MemberOuter().new Inner();
 		System.out.println(inner.b);
 		System.out.println(inner1.b);
 
 
-		StaticInner staticInner = new StaticInner();
-		int c = StaticInner.d;
-		int d = StaticInner.Inner.d;
+		StaticOuter staticOuter = new StaticOuter();
+		int c = StaticOuter.d;
+		int d = StaticOuter.Inner.d;
 
-		StaticInner.Inner inner2 = new StaticInner.Inner();
+		StaticOuter.Inner inner2 = new StaticOuter.Inner();
 
 	}
 }

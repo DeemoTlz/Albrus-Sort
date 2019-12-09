@@ -1,6 +1,6 @@
 package com.deemo.inner;
 
-public class MemberInner {
+public class MemberOuter {
 
 	private int a = 1;
 	public int b = 2;
@@ -12,9 +12,9 @@ public class MemberInner {
 
 		public void print() {
 			System.out.println("a = " + a);
-			System.out.println("MemberInner.this.a = " + MemberInner.this.a);
+			System.out.println("MemberInner.this.a = " + MemberOuter.this.a);
 			System.out.println("b = " + b);
-			System.out.println("MemberInner.this.b = " + MemberInner.this.b);
+			System.out.println("MemberInner.this.b = " + MemberOuter.this.b);
 			System.out.println("MemberInner c = " + c);
 		}
 	}
@@ -31,6 +31,6 @@ public class MemberInner {
 	}
 
 	public static void constrators() {
-		Inner inner = new MemberInner().new Inner();
+		Inner inner = new MemberOuter().new Inner();
 	}
 }

@@ -1,6 +1,6 @@
 package com.deemo.inner;
 
-public class MethodInner {
+public class MethodOuter {
 
 	private int a = 1;
 	public int b = 2;
@@ -13,7 +13,7 @@ public class MethodInner {
 			public int b = 4;
 
 			private void print() {
-				int a = MethodInner.this.a;
+				int a = MethodOuter.this.a;
 				a = this.a;
 			}
 		}
@@ -26,9 +26,9 @@ public class MethodInner {
 
 			private void print() {
 				// int a = MethodInner.a;
-				int a = new MethodInner().a;
-				int c = MethodInner.c;
-				int d = MethodInner.d;
+				int a = new MethodOuter().a;
+				int c = MethodOuter.c;
+				int d = MethodOuter.d;
 			}
 
 		}
