@@ -37,7 +37,7 @@ public class RadixSort<T extends Comparable<T>> {
             }
         }
 
-        System.out.printf("共 %d个随机数，冒泡排序共移动数据 %10d次，共花费 %5dms。\r\n", arr.length, count, (System.currentTimeMillis() - currentTimeMillis));
+        System.out.printf("共 %d个随机数，基数排序共移动数据 %10d次，共花费 %5dms。\r\n", arr.length, count, (System.currentTimeMillis() - currentTimeMillis));
     }
 
     public void print() {
