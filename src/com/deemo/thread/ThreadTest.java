@@ -3,10 +3,7 @@ package com.deemo.thread;
 import org.testng.annotations.Test;
 
 import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class ThreadTest {
 
@@ -169,7 +166,13 @@ public class ThreadTest {
         boolean special = dataSize % threadSize == 0;
 
         // 创建一个线程池
-        ExecutorService exec = Executors.newFixedThreadPool(threadNum);
+        // ExecutorService exec = Executors.newFixedThreadPool(threadNum);
+        ExecutorService exec = new ThreadPoolExecutor(threadNum, threadNum, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(8), new ThreadFactory() {
+            @Override
+            public Thread newThread(Runnable r) {
+                return new Thread(r, "ThreadPoolExecutor - " + (int) (Math.random() * 100));
+            }
+        });
         // 定义一个任务集合
         List<Callable<Integer>> tasks = new ArrayList<>();
         Callable<Integer> task;
