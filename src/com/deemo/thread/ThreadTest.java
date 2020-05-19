@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadTest {
 
@@ -168,9 +169,10 @@ public class ThreadTest {
         // 创建一个线程池
         // ExecutorService exec = Executors.newFixedThreadPool(threadNum);
         ExecutorService exec = new ThreadPoolExecutor(threadNum, threadNum, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(8), new ThreadFactory() {
+            private final AtomicInteger atomicInteger = new AtomicInteger(1);
             @Override
             public Thread newThread(Runnable r) {
-                return new Thread(r, "ThreadPoolExecutor - " + (int) (Math.random() * 100));
+                return new Thread(r, "ThreadPoolExecutor - " + atomicInteger.getAndIncrement());
             }
         });
         // 定义一个任务集合
