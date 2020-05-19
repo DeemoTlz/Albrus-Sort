@@ -1,4 +1,4 @@
-package com.deemo;
+package com.deemo.collection;
 
 import org.testng.annotations.Test;
 
