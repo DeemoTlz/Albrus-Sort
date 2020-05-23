@@ -1,7 +1,7 @@
 package com.deemo.tlz;
 
-import com.deemo.inner.MemberOuter;
-import com.deemo.inner.StaticOuter;
+import com.deemo.foundation.inner.MemberOuter;
+import com.deemo.foundation.inner.StaticOuter;
 
 public class InnerTest {
 

@@ -1,4 +1,4 @@
-package com.deemo.inner;
+package com.deemo.foundation.inner;
 
 public class AnonymousOuter {
 
