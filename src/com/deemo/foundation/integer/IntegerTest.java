@@ -2,7 +2,7 @@ package com.deemo.foundation.integer;
 
 import org.testng.annotations.Test;
 
-public class intTest {
+public class IntegerTest {
 
     @Test
     // 场景1
